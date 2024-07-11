@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 function Navbar() {
   return (
 
-    <nav class="navbar navbar-expand-lg border-bottom " style={{ backgroundColor: "#FFF" }}>
+    <nav class="navbar navbar-expand-lg border-bottom " style={{ backgroundColor: "#FFF", margin: "0%", padding: "0%" }}>
       <div class="container p-2">
-        <Link class="navbar-brand" to={"/"}>
-          <img src='media/images/logo.svg' style={{ width: "21%", marginLeft: "8%" }} />
+        <Link class="navbar-brand" to={"/"} style={{ margin: "0%", padding: "0%" }}>
+          <img src='media/images/3-19.jpg' alt='' style={{ width: "28%", marginLeft: "50%" }} />
         </Link>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,8 +15,11 @@ function Navbar() {
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-          <form class="d-flex" role="search">
+          <form class="d-flex" role="search" style={{ marginLeft: "50%" }}>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <Link class="nav-link active" aria-current="page" to={"/login"}>Login</Link>
+              </li>
               <li class="nav-item">
                 <Link class="nav-link active" aria-current="page" to={"/signup"}>Signup</Link>
               </li>

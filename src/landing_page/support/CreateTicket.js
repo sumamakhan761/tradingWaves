@@ -16,7 +16,7 @@ function CreateTicket() {
           <a href='' style={styles}>Non Resident Indian (NRI)</a> <br />
         </div>
         <div className='col-4 p-3 mt-5 mb-2'>
-          <p className='fs-5'><i class="fa fa-user" aria-hidden="true"></i> Your Zerodha Account</p>
+          <p className='fs-5'><i class="fa fa-user" aria-hidden="true"></i> Your Tradingwaves Account</p>
           <a href='' style={styles}>Login credentials</a> <br />
           <a href='' style={styles}>Your Profile</a> <br />
           <a href='' style={styles}>Account modification and segment addition</a> <br />

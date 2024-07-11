@@ -21,7 +21,7 @@ function ProductPage() {
       <RightSection
         imageURL="media/images/products-console.png"
         productName="Console"
-        productDiscription="The central dashboard for your Zerodha account. Gain insights into your trades and investments with in-depth reports and visualisations."
+        productDiscription="The central dashboard for your Tradingwaves account. Gain insights into your trades and investments with in-depth reports and visualisations."
         tryDemo=""
         TryDemo="Learn more"
       />
@@ -53,7 +53,7 @@ function ProductPage() {
         learnMore=""
         googlePlay=""
         appStore="" />
-      <p className='text-center'>Want to know more about our technology stack? Check out the Zerodha.tech blog.</p>
+      <p className='text-center'>Want to know more about our technology stack? Check out the Tradingwaves.tech blog.</p>
       <Universe />
     </>
   );

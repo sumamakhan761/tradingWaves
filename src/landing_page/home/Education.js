@@ -6,7 +6,7 @@ function Education() {
 0      <div className='row justify-content-center'>
 
         <div className='col-lg-6 col-md-6'>
-          <img src='media/images/index-education.svg' style={{ width: "70%" }} />
+          <img src='media/images/index-education.svg' alt='' style={{ width: "70%" }} />
         </div>
 
         <div className='col-lg-6 col-md-6 col-sm-12 ' style={{ width: "40%" }}>

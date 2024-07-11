@@ -2,18 +2,30 @@ require('dotenv').config();
 
 const express = require("express");
 const mongoose = require("mongoose");
-const { HoldingsModel } = require("./model/HoldingsModel");
-const { PositionsModel } = require("./model/PositionsModel");
+const MongoStore = require('connect-mongo');
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
+const { HoldingsModel } = require("./Models/HoldingsModel");
+const { PositionsModel } = require("./Models/PositionsModel");
+const authRoute = require("./Routes/AuthRoute");
+const app = express()
+
 
 const PORT = process.env.PORT || 3002;
 const uri = process.env.MONGO_URL;
 
-const app = express()
-
-app.use(cors());
 app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(express.json());
+app.use("/", authRoute);
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
 // app.get('/addHoldings', async (req, res) => {
 //   let tempHodings = [
@@ -182,7 +194,26 @@ app.use(bodyParser.json());
 //   });
 //   res.send("Done!")
 // })
+main()
+  .then(() => {
+    console.log("connected to DB");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
+async function main() {
+  await mongoose.connect(uri);
+}
+
+// app.get("/demouser", async (req, res) => {
+//   let fakeUser = new User({
+//     email: "student@gmail.com",
+//     username: "delta-student",
+//   });
+//   let registerUser = await User.register(fakeUser, "helloworld");
+//   res.send(registerUser);
+// });
 
 app.get('/allHoldings', async (req, res) => {
   let allHoldings = await HoldingsModel.find({});
@@ -196,6 +227,5 @@ app.get('/allPositions', async (req, res) => {
 
 app.listen(PORT, () => {
   console.log("app started");
-  mongoose.connect(uri);
-  console.log("DB connected");
 })
+

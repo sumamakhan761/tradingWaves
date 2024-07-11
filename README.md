@@ -1,3 +1,3 @@
 # tradingWaves
 ## 3 branches 
-### see it on brances 
+#### this is a trading website which is inspired by zarodah 
